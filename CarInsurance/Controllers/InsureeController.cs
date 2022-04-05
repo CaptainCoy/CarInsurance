@@ -14,6 +14,11 @@ namespace CarInsurance.Controllers
     {
         private InsuranceEntities db = new InsuranceEntities();
 
+        public ActionResult Admin()
+        {
+            return View(db.Insurees.ToList());
+        }
+
         // GET: Insuree
         public ActionResult Index()
         {
@@ -58,7 +63,7 @@ namespace CarInsurance.Controllers
                     insuree.Quote += 100;
                 }
                 // This will check the insuree's age is greater than 18 but under 25, if the insuree is 19-25 then $50 will be added to the quote
-                if ((DateTime.Now.Year - insuree.DateOfBirth.Year > 18 && DateTime.Now.Year - insuree.DateOfBirth.Year < 25))
+                if ((DateTime.Now.Year - insuree.DateOfBirth.Year >= 18 && DateTime.Now.Year - insuree.DateOfBirth.Year <= 25))
                 {
                     insuree.Quote += 50;
                 }
