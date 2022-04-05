@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets.user"
+    },
+    "mssql1": {
+      "type": "mssql.local",
+      "connectionId": "ConnectionStrings:C::USERS:ALEX:ONEDRIVE:DOCUMENTS:BASIC_C#_PROGRAMS:CARINSURANCE:CARINSURANCE:APP_DATA:INSURANCE.MDF",
+      "secretStore": "LocalSecretsFile"
+    }
+  }
+}
