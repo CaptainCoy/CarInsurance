@@ -53,17 +53,17 @@ namespace CarInsurance.Controllers
                 insuree.Quote = 50.0m;
 
                 // This will add $100 dollars to the quote if the insuree is 18 and under
-                if ((DateTime.Now.Year - insuree.DateOfBirth.Year <= 18))  // This subtracts the insuree's date of birth from the current time and checks if the difference is less than or equal to 18 
+                if ((DateTime.Now.Year - insuree.DateOfBirth.Year < 18))  // This subtracts the insuree's date of birth from the current time and checks if the difference is less than 18 
                 {
                     insuree.Quote += 100;
                 }
-                // This will check the insuree's age is greater than 18 but under 25, if the insuree is 19-24 then $50 will be added to the quote
+                // This will check the insuree's age is greater than 18 but under 25, if the insuree is 19-25 then $50 will be added to the quote
                 if ((DateTime.Now.Year - insuree.DateOfBirth.Year > 18 && DateTime.Now.Year - insuree.DateOfBirth.Year < 25))
                 {
                     insuree.Quote += 50;
                 }
                 // This checks if the insuree is 25 and older, if so only $25 is added to the quote
-                if ((DateTime.Now.Year - insuree.DateOfBirth.Year >= 25))
+                if ((DateTime.Now.Year - insuree.DateOfBirth.Year > 25))
                 {
                     insuree.Quote += 25;
                 }
